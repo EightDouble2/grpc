@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package grpc;
+option java_package = "com.johnny.grpc";
+option java_outer_classname = "calculationServiceProto";
+option java_multiple_files = true;
+
+service CalculationService {
+  rpc add (AddRequest) returns (AddResponse) {}
+
+  rpc sub (SubRequest) returns (SubResponse) {}
+}
+
+message AddRequest {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+message AddResponse {
+  int32 result = 1;
+}
+
+message SubRequest {
+  int32 a = 1;
+  int32 b = 2;
+}
+
+message SubResponse {
+  int32 result = 1;
+}
